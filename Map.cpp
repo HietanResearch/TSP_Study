@@ -28,6 +28,16 @@ void Map::printNodes(){
 	for(Node& n: nodes) std::cout << n;
 }
 
+void Map::printNodes(std::ofstream& f){
+	for(Node& n: nodes) f << n;
+}
+
+void Map::printPaths(std::vector<int>& paths, std::ofstream& f){
+	for(int i : paths){
+		f << nodes.at(i) << std::endl;
+	}
+}
+
 std::vector<int> Map::solveNearestNeighbor(){
 	std::vector<int> paths = std::vector<int>(nodesCount + 1);
 

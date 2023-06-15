@@ -11,6 +11,10 @@ void Node::print(std::ostream& os){
 	os << x << ',' << y << std::endl;
 }
 
+void Node::print(std::ofstream& f){
+	f << x << ',' << y << std::endl;
+}
+
 void Node::setIsVisited(bool b){
 	isVisited = b;
 }
