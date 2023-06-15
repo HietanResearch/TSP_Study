@@ -7,6 +7,7 @@ class Node {
 		int x;
 		int y;
 	public:
+		Node();
 		Node(int x, int y);
 		void print(std::ostream& os);
 };
