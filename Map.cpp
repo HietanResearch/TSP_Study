@@ -13,5 +13,5 @@ void Map::putNodes(int count){
 }
 
 void Map::printNodes(){
-	for(Node n: nodes) std::cout << n << std::endl;
+	for(Node n: nodes) std::cout << n;
 }

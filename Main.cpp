@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Map.hpp"
-#include "Node.hpp"
 
 int main(void){
 	Map map(100, 100);
