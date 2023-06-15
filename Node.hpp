@@ -1,5 +1,4 @@
-#ifndef NODE_HPP
-#define NODE_HPP
+#pragma once
 
 #include <iostream>
 
@@ -13,5 +12,3 @@ class Node {
 };
 
 std::ostream& operator<<(std::ostream& os, Node& n);
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef MAP_HPP
-#define MAP_HPP
+#pragma once
 
 #include <iostream>
 #include <vector>
@@ -16,5 +15,3 @@ class Map {
 		void putNodes(int count);
 		void printNodes();
 };
-
-#endif
