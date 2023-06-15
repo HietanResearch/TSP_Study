@@ -14,7 +14,7 @@ void Map::putNodes(int count){
 }
 
 void Map::putNodes(){
-	srand(time(NULL));
+	srand(0);
 
 	nodes = std::vector<Node>(nodesCount);
 	for(Node& n: nodes){
@@ -38,7 +38,7 @@ std::vector<int> Map::solveNearestNeighbor(){
 		int min_ind;
 		double min_length = DBL_MAX;
 
-		Node prevNode = nodes.at(i - 1);
+		Node prevNode = nodes.at(paths.at(i - 1));
 
 		for(int j = 1; j < nodesCount; j++){
 			if(nodes.at(j).getIsVisited()) continue;
