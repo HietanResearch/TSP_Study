@@ -19,3 +19,4 @@ class Node {
 		friend double calcDistance(Node n1, Node n2);
 };
 std::ostream& operator<<(std::ostream& os, Node& n);
+std::ofstream& operator<<(std::ofstream& f, Node& n);

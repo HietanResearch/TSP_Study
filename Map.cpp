@@ -1,4 +1,5 @@
 #include "Map.hpp"
+#include "Path.hpp"
 
 Map::Map(int w = 100, int h = 100, int c = 10){
 	width = w;
@@ -32,39 +33,33 @@ void Map::printNodes(std::ofstream& f){
 	for(Node& n: nodes) f << n;
 }
 
-void Map::printPaths(std::vector<int>& paths, std::ofstream& f){
-	for(int i : paths){
-		f << nodes.at(i) << std::endl;
-	}
-}
+std::vector<Path> Map::solveNearestNeighbor(){
+	std::vector<Path> paths = std::vector<Path>();
+	int start_ind = 0;
 
-std::vector<int> Map::solveNearestNeighbor(){
-	std::vector<int> paths = std::vector<int>(nodesCount + 1);
+	Node* prevNode = &nodes.at(start_ind);
 
-	paths.at(0) = 0;
-	nodes.at(0).setIsVisited(true);
-
-	for(int i = 1; i <= nodesCount; i++){
+	for(int i = 0; i < nodesCount - 1; i++){
 		int min_ind;
 		double min_length = DBL_MAX;
 
-		Node prevNode = nodes.at(paths.at(i - 1));
+		prevNode->setIsVisited(true);
 
-		for(int j = 1; j < nodesCount; j++){
+		for(int j = 0; j < nodesCount; j++){
 			if(nodes.at(j).getIsVisited()) continue;
 
-			double length = calcDistance(prevNode, nodes.at(j));
+			double length = calcDistance(*(prevNode), nodes.at(j));
 			if(length < min_length){
 				min_ind = j;
 				min_length = length;
 			}
 		}
 
-		paths.at(i) = min_ind;
-		nodes.at(min_ind).setIsVisited(true);
+		paths.push_back(Path(*(prevNode), nodes.at(min_ind)));
+		prevNode = &nodes.at(min_ind);
 	}
 
-	paths.at(nodesCount) = 0;
+	paths.push_back(Path((paths.end() - 1)->getN2(), paths.begin()->getN1()));
 
 	return paths;
 }

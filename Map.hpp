@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include "Node.hpp"
+#include "Path.hpp"
 
 class Map {
 	private:
@@ -21,6 +22,5 @@ class Map {
 		void putNodes();
 		void printNodes();
 		void printNodes(std::ofstream& f);
-		void printPaths(std::vector<int>& paths, std::ofstream& f);
-		std::vector<int> solveNearestNeighbor();
+		std::vector<Path> solveNearestNeighbor();
 };

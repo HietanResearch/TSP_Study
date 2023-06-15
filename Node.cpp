@@ -31,3 +31,8 @@ std::ostream& operator<<(std::ostream& os, Node& n){
 	n.print(os);
 	return os;
 }
+
+std::ofstream& operator<<(std::ofstream& f, Node& n){
+	n.print(f);
+	return f;
+}

@@ -4,16 +4,12 @@
 #include <string>
 #include <vector>
 #include "Map.hpp"
-
-std::ofstream& operator<<(std::ofstream& f, std::vector<int>& v){
-	for(int i = 0; i < int(v.size()) - 1; i++) f << v.at(i) << ',' << v.at(i + 1) << std::endl;
-	return f;
-}
+#include "Path.hpp"
 
 int main(int argc, char *argv[]){
 	Map map(100, 100, 20);
 
-	std::vector<int> paths = map.solveNearestNeighbor();
+	std::vector<Path> paths = map.solveNearestNeighbor();
 
 	std::ofstream file;
 
@@ -25,7 +21,7 @@ int main(int argc, char *argv[]){
 		std::exit(1);
 	}
 
-	map.printPaths(paths, file);
+	printPaths(paths, file);
 
 	return 0;
 }
