@@ -2,7 +2,7 @@ CC = g++
 TARGET = Main.out
 SRCS = Main.cpp Map.cpp Node.cpp
 OBJS = $(SRCS:.cpp=.o)
-CFLAGS = -std=c++20 -Wall
+CFLAGS = -std=c++20 -Wall -Wextra -Wshadow -ftrapv
 
 $(TARGET): $(OBJS)
 	$(CC) $^ -o $@
