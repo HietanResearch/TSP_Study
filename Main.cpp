@@ -3,7 +3,8 @@
 #include "Map.hpp"
 
 std::ostream& operator<<(std::ostream& os, std::vector<int>& v){
-	for(int i: v) std::cout << i << ' ';
+	for(int i: v) std::cout << i << ',';
+	std::cout << "\b ";
 	return os;
 }
 

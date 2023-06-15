@@ -14,7 +14,7 @@ void Map::putNodes(int count){
 }
 
 void Map::putNodes(){
-	srand(0);
+	srand(time(NULL));
 
 	nodes = std::vector<Node>(nodesCount);
 	for(Node& n: nodes){

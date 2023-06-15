@@ -8,7 +8,7 @@ Node::Node(int xx, int yy){
 }
 
 void Node::print(std::ostream& os){
-	os << x << ' ' << y << std::endl;
+	os << x << ',' << y << std::endl;
 }
 
 void Node::setIsVisited(bool b){
