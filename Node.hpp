@@ -16,7 +16,6 @@ class Node {
 		void print(std::ofstream& f);
 		void setIsVisited(bool b);
 		bool getIsVisited();
-		double calcDistance(Node n);
+		friend double calcDistance(Node n1, Node n2);
 };
-
 std::ostream& operator<<(std::ostream& os, Node& n);

@@ -53,7 +53,7 @@ std::vector<int> Map::solveNearestNeighbor(){
 		for(int j = 1; j < nodesCount; j++){
 			if(nodes.at(j).getIsVisited()) continue;
 
-			double length = prevNode.calcDistance(nodes.at(j));
+			double length = calcDistance(prevNode, nodes.at(j));
 			if(length < min_length){
 				min_ind = j;
 				min_length = length;

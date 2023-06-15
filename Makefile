@@ -1,6 +1,6 @@
 CC = g++
 TARGET = Main.out
-SRCS = Main.cpp Map.cpp Node.cpp
+SRCS = Main.cpp Map.cpp Node.cpp Path.cpp
 OBJS = $(SRCS:.cpp=.o)
 CFLAGS = -std=c++20 -Wall -Wextra -Wshadow -ftrapv
 
